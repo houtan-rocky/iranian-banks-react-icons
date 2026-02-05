@@ -1,0 +1,48 @@
+{
+  "name": "@houtan-rocky/iranian-banks-react-icons",
+  "version": "1.2.0",
+  "description": "iranian banks React SVG icons library.",
+  "main": "./dist/cjs/index.js",
+  "module": "./dist/esm/index.js",
+  "author": "Houtan Rocky",
+  "license": "MIT",
+  "keywords": [
+    "react",
+    "icon",
+    "iranian",
+    "persian",
+    "bank"
+  ],
+  "files": [
+    "dist"
+  ],
+  "bugs": {
+    "url": "https://github.com/houtan-rocky/iranian-banks-react-icons/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/houtan-rocky/iranian-banks-react-icons.git"
+  },
+  "homepage": "https://github.com/houtan-rocky/iranian-banks-react-icons#readme",
+  "sideEffects": false,
+  "scripts": {
+    "optimize": "rimraf ./optimized & svgo -q -p 8 -f ./raw -o ./optimized",
+    "build": "npm run optimize && node scripts/build.js",
+    "release": "npx changeset publish"
+  },
+  "peerDependencies": {
+    "react": "^16.13.1 || ^17.0.1 || ^18.0.0 || ^19.2.0",
+    "react-dom": "^16.13.1 || ^17.0.1 || ^18.0.0 || ^19.2.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.15.5",
+    "@babel/preset-react": "^7.14.5",
+    "@changesets/cli": "^2.26.2",
+    "@svgr/cli": "^5.5.0",
+    "@svgr/core": "^5.5.0",
+    "camelcase": "^6.2.0",
+    "rimraf": "^3.0.2",
+    "svgo": "^2.5.0",
+    "terser": "^5.7.2"
+  }
+}
