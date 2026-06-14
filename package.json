@@ -1,6 +1,6 @@
 {
-  "name": "@houtan-rocky/iranian-banks-react-icons",
-  "version": "1.2.0",
+  "name": "@iran-utils/iranian-banks-react-icons",
+  "version": "1.0.0",
   "description": "iranian banks React SVG icons library.",
   "main": "./dist/cjs/index.js",
   "module": "./dist/esm/index.js",

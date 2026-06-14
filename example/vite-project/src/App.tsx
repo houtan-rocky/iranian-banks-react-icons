@@ -7,7 +7,7 @@ import {
   SamanColorIcon,
   ZarrinpalIcon,
   ZarrinpalColorIcon
-} from "@houtan-rocky/iranian-banks-react-icons";
+} from "@iran-utils/iranian-banks-react-icons";
 import "./App.css";
 
 function App() {
@@ -15,7 +15,7 @@ function App() {
     <>
       <div>
         <h1>🇮🇷 Iranian Banks React Icons</h1>
-        <p>Example usage of @houtan-rocky/iranian-banks-react-icons</p>
+        <p>Example usage of @iran-utils/iranian-banks-react-icons</p>
       </div>
       
       <div className="icon-grid">

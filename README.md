@@ -20,19 +20,19 @@ A modern React icon library featuring official logos from Iranian banks, payment
 ### Installation
 
 ```bash
-npm install @houtan-rocky/iranian-banks-react-icons
+npm install @iran-utils/iranian-banks-react-icons
 ```
 
 or with yarn:
 
 ```bash
-yarn add @houtan-rocky/iranian-banks-react-icons
+yarn add @iran-utils/iranian-banks-react-icons
 ```
 
 ### Basic Usage
 
 ```jsx
-import { MelliColorIcon, MellatIcon } from '@houtan-rocky/iranian-banks-react-icons';
+import { MelliColorIcon, MellatIcon } from '@iran-utils/iranian-banks-react-icons';
 
 function MyComponent() {
   return (
@@ -61,7 +61,7 @@ import {
   PasargadIcon,
   SaderatColorIcon,
   SaderatIcon
-} from '@houtan-rocky/iranian-banks-react-icons';
+} from '@iran-utils/iranian-banks-react-icons';
 
 function BankLogos() {
   return (
@@ -127,7 +127,7 @@ Each bank has both `Icon` and `ColorIcon` variants.
 ### Dynamic Icon Loading
 
 ```jsx
-import * as BankIcons from '@houtan-rocky/iranian-banks-react-icons';
+import * as BankIcons from '@iran-utils/iranian-banks-react-icons';
 
 function DynamicBankLogo({ bankName, useColor = true }) {
   const iconName = useColor 
@@ -151,7 +151,7 @@ function DynamicBankLogo({ bankName, useColor = true }) {
 ### CommonJS Import
 
 ```javascript
-const { MelliIcon, MellatColorIcon } = require('@houtan-rocky/iranian-banks-react-icons');
+const { MelliIcon, MellatColorIcon } = require('@iran-utils/iranian-banks-react-icons');
 ```
 
 ---
@@ -194,6 +194,6 @@ MIT License - see [LICENSE](LICENSE) file for details.
 
 ## Links
 
-- 📦 [npm Package](https://www.npmjs.com/package/@houtan-rocky/iranian-banks-react-icons)
+- 📦 [npm Package](https://www.npmjs.com/package/@iran-utils/iranian-banks-react-icons)
 - 🔗 [GitHub Repository](https://github.com/houtan-rocky/iranian-banks-react-icons)
 - 📝 [Report an Issue](https://github.com/houtan-rocky/iranian-banks-react-icons/issues)

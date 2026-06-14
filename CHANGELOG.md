@@ -1,10 +1,10 @@
-# @houtan-rocky/iranian-banks-react-icons
+# @iran-utils/iranian-banks-react-icons
 
 ## 1.2.0
 
 ### Changes
 
-- Updated package name to `@houtan-rocky/iranian-banks-react-icons`
+- Updated package name to `@iran-utils/iranian-banks-react-icons`
 - Added GitHub repository homepage link to package.json
 - Updated all documentation with correct package name and repository links
 - Enhanced example project with improved UI and multiple icon demonstrations
