@@ -75,10 +75,10 @@ async function build() {
   await fs.writeFile(path.join(OUT_DIR, 'cjs/index.js'), cjsMin, 'utf-8');
 
   // --- TypeScript declarations ---
+  // Use JSX intrinsic types (no React import) so resolution works from the consumer's context.
   const dts = [
-    `import * as React from 'react';`,
-    `export type IconProps = Omit<React.SVGProps<SVGSVGElement>, 'children'> & React.RefAttributes<SVGSVGElement>;`,
-    ...names.map(name => `export declare const ${name}: React.ForwardRefExoticComponent<IconProps>;`),
+    `export type IconProps = JSX.IntrinsicElements['svg'];`,
+    ...names.map(name => `export declare const ${name}: (props: IconProps) => JSX.Element;`),
   ].join('\n') + '\n';
   const pkgRoot = path.resolve(__dirname, '../packages/react');
   await fs.writeFile(path.join(pkgRoot, 'index.d.ts'), dts, 'utf-8');
