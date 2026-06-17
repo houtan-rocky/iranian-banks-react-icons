@@ -5,17 +5,18 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
-lerna-debug.log*
 
+# Dependencies
 node_modules
-dist
-optimized
-package-lock.json
-**/package-lock.json
-dist-ssr
-*.local
+**/node_modules
 
-# Editor directories and files
+# Build outputs
+dist
+**/dist
+optimized
+/docs
+
+# Editor
 .vscode/*
 !.vscode/extensions.json
 .idea
@@ -25,3 +26,10 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Misc
+*.local
+dist-ssr
+
+# Legacy (superseded by apps/docs)
+example/

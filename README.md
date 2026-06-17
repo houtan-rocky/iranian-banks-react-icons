@@ -1,40 +1,41 @@
-# 🇮🇷 Iranian Banks React Icons
+# 🇮🇷 Iranian Banks Icons
 
-A modern React icon library featuring official logos from Iranian banks, payment service providers, and financial institutions. Each logo is available in both full-color and monochrome variants, optimized as React SVG components.
+[![npm (core)](https://img.shields.io/npm/v/@iran-utils/iranian-banks-icons-core?label=%40iran-utils%2Fcore&color=gray&logo=npm)](https://www.npmjs.com/package/@iran-utils/iranian-banks-icons-core)
+[![npm (react)](https://img.shields.io/npm/v/@iran-utils/iranian-banks-react-icons?label=%40iran-utils%2Freact&color=crimson&logo=npm)](https://www.npmjs.com/package/@iran-utils/iranian-banks-react-icons)
+[![npm (vue)](https://img.shields.io/npm/v/@iran-utils/iranian-banks-vue-icons?label=%40iran-utils%2Fvue&color=42b883&logo=npm)](https://www.npmjs.com/package/@iran-utils/iranian-banks-vue-icons)
+[![npm downloads](https://img.shields.io/npm/dm/@iran-utils/iranian-banks-react-icons?color=blue)](https://www.npmjs.com/package/@iran-utils/iranian-banks-react-icons)
+[![Bundle size](https://img.shields.io/bundlephobia/minzip/@iran-utils/iranian-banks-react-icons?label=minzipped)](https://bundlephobia.com/package/@iran-utils/iranian-banks-react-icons)
+[![License: MIT](https://img.shields.io/badge/license-MIT-green)](LICENSE)
+[![React](https://img.shields.io/badge/React-16%20|%2017%20|%2018%20|%2019-61dafb?logo=react&logoColor=white)](https://reactjs.org)
+[![Vue](https://img.shields.io/badge/Vue-3-42b883?logo=vue.js&logoColor=white)](https://vuejs.org)
+[![GitHub stars](https://img.shields.io/github/stars/houtan-rocky/iranian-banks-react-icons?style=social)](https://github.com/houtan-rocky/iranian-banks-react-icons)
+
+SVG icon library for **60+ Iranian banks, PSPs, and payment providers** — available for React, Vue 3, and as framework-agnostic SVG data. Every logo ships in full-color and monochrome variants.
+
+**[→ Live Playground](https://houtan-rocky.github.io/iranian-banks-react-icons/)**
 
 ---
 
-## Features
+## Packages
 
-✨ **Complete Coverage** - Icons for major Iranian banks and PSPs  
-🎨 **Dual Variants** - Color and monochrome versions for every logo  
-📦 **Tree-Shakeable** - Import only what you need  
-⚡ **Zero Dependencies** - Pure React components  
-🔧 **TypeScript Ready** - Full type definitions included  
-📱 **React Native Compatible** - Works with React Native (SVG support required)
+| Package | Description | Install |
+|---|---|---|
+| [`@iran-utils/iranian-banks-icons-core`](packages/core) | Framework-agnostic SVG data (`viewBox` + `content`) | `npm i @iran-utils/iranian-banks-icons-core` |
+| [`@iran-utils/iranian-banks-react-icons`](packages/react) | React components (depends on core) | `npm i @iran-utils/iranian-banks-react-icons` |
+| [`@iran-utils/iranian-banks-vue-icons`](packages/vue) | Vue 3 components (depends on core) | `npm i @iran-utils/iranian-banks-vue-icons` |
 
 ---
 
-## Quick Start
-
-### Installation
+## React
 
 ```bash
 npm install @iran-utils/iranian-banks-react-icons
 ```
 
-or with yarn:
-
-```bash
-yarn add @iran-utils/iranian-banks-react-icons
-```
-
-### Basic Usage
-
 ```jsx
 import { MelliColorIcon, MellatIcon } from '@iran-utils/iranian-banks-react-icons';
 
-function MyComponent() {
+function App() {
   return (
     <div>
       <MelliColorIcon width={64} height={64} />
@@ -44,156 +45,179 @@ function MyComponent() {
 }
 ```
 
+All icons accept `React.SVGProps<SVGSVGElement>` and are wrapped in `React.forwardRef`.
+
+---
+
+## Vue 3
+
+```bash
+npm install @iran-utils/iranian-banks-vue-icons
+```
+
+```vue
+<script setup>
+import { MelliColorIcon, MellatIcon } from '@iran-utils/iranian-banks-vue-icons';
+</script>
+
+<template>
+  <MelliColorIcon :width="64" :height="64" />
+  <MellatIcon :width="64" :height="64" :style="{ color: '#0066cc' }" />
+</template>
+```
+
+Vue components use `inheritAttrs: false` and spread `$attrs` onto the `<svg>` element.
+
+---
+
+## Core (framework-agnostic)
+
+Use the core package to build your own adapters for Angular, Svelte, Web Components, or any other framework:
+
+```bash
+npm install @iran-utils/iranian-banks-icons-core
+```
+
+```js
+import { MelliColorIcon } from '@iran-utils/iranian-banks-icons-core';
+// { viewBox: "0 0 ...", content: "<path ...>...</path>" }
+
+// Web Component example
+class BankIcon extends HTMLElement {
+  connectedCallback() {
+    this.innerHTML = `<svg viewBox="${MelliColorIcon.viewBox}" xmlns="http://www.w3.org/2000/svg">
+      ${MelliColorIcon.content}
+    </svg>`;
+  }
+}
+```
+
 ---
 
 ## Icon Variants
 
-Every bank logo comes in two styles:
+Every bank has two export styles:
 
-- **`[BankName]ColorIcon`** - Full-color official logo (e.g., `MelliColorIcon`)
-- **`[BankName]Icon`** - Monochrome version for custom styling (e.g., `MelliIcon`)
-
-### Example
-
-```jsx
-import {
-  PasargadColorIcon,
-  PasargadIcon,
-  SaderatColorIcon,
-  SaderatIcon
-} from '@iran-utils/iranian-banks-react-icons';
-
-function BankLogos() {
-  return (
-    <>
-      {/* Full-color versions */}
-      <PasargadColorIcon width={80} height={80} />
-      <SaderatColorIcon width={80} height={80} />
-      
-      {/* Monochrome versions with custom colors */}
-      <PasargadIcon width={80} height={80} fill="#ff6b00" />
-      <SaderatIcon width={80} height={80} fill="#1a5490" />
-    </>
-  );
-}
-```
+| Variant | Name pattern | Description |
+|---|---|---|
+| **Color** | `[Bank]ColorIcon` | Full-color official logo |
+| **Mono** | `[Bank]Icon` | Single-color, pass `fill` to tint |
 
 ---
 
 ## Props
 
-All icons accept standard SVG props as defined by `React.SVGProps<SVGSVGElement>`, including:
+**React:** All icons accept `React.SVGProps<SVGSVGElement>` + `React.RefAttributes<SVGSVGElement>`.
 
-- `width` / `height` - Size control
-- `fill` - Color (for monochrome icons)
-- `className` - CSS class names
-- `style` - Inline styles
-- All other standard SVG attributes
+**Vue:** All icons accept any attribute via `$attrs` (they're spread onto the root `<svg>`).
+
+| Prop | Description |
+|---|---|
+| `width` / `height` | Size |
+| `fill` | Tint color (monochrome icons) |
+| `className` / `class` | CSS class |
+| `style` | Inline styles |
 
 ---
 
-## Included Banks & Institutions
+## Available Icons
 
-The library includes icons for:
-
-**Traditional Banks:** Melli, Mellat, Saderat, Tejarat, Sepah, Pasargad, Saman, Refah, Keshavarzi, Maskan, Parsian, Post, and more.
-
-**Modern Banks:** BluBank, Bankino, Futurebank, Iran Zamin, Ayandeh, Melall, Sarmayeh, and others.
-
-**Payment Providers:** Zarrinpal, Pay.ir, Payping, NextPay, IdPay, Vandar, Digipay, and various PSPs.
-
-**Financial Networks:** Shaparak, Bank Markazi, Iran Europe, Standard Chartered, and related institutions.
+Browse all icons interactively: **[Playground →](https://houtan-rocky.github.io/iranian-banks-react-icons/)**
 
 <details>
-<summary><strong>View complete icon list</strong></summary>
+<summary><strong>Banks (38)</strong></summary>
 
-```
-AsanPardakht, Ayandeh, BankMarkazi, Bankino, BluBank, Caspian, Dey, Digipay,
-EghtesadNovin, Futurebank, Gardeshgari, Hesabit, Idpay, IranEurope, IranVenezuela,
-IranZamin, Karafarin, Keshavarzi, KhavarMianeh, Maskan, MehrIran, Melall, Mellat,
-Melli, NextPay, Noor, Parsian, Pasargad, PasargadPep, PayIr, Payping, Post, Refah,
-Resalat, Sadad, Saderat, Saman, SamanKish, SanatMadan, Sarmayeh, Sepah, SepahMerged*,
-Shahr, Shaparak, Sina, StandardChartered, TaavonEslami, Tejarat, Tosee,
-ToseeSaderat, ToseeTaavon, Vandar, Zarrinpal, Zibal
-```
+`Melli` · `Mellat` · `Saderat` · `Tejarat` · `Sepah` · `Keshavarzi` · `Maskan` · `Refah` · `Post` · `SanatMadan` · `TaavonEslami` · `Pasargad` · `Saman` · `Parsian` · `Ayandeh` · `Karafarin` · `EghtesadNovin` · `Sina` · `Shahr` · `Gardeshgari` · `KhavarMianeh` · `Dey` · `Caspian` · `Sarmayeh` · `Resalat` · `IranZamin` · `IranEurope` · `IranVenezuela` · `Noor` · `MehrIran` · `Melall` · `Tosee` · `ToseeSaderat` · `ToseeTaavon` · `StandardChartered` · `BluBank` · `Bankino` · `Futurebank`
 
-Each bank has both `Icon` and `ColorIcon` variants.
+Each exports `[Name]ColorIcon` and `[Name]Icon`.
+
+</details>
+
+<details>
+<summary><strong>Payment Platforms (11)</strong></summary>
+
+`Zarrinpal` · `PayIr` · `Payping` · `NextPay` · `Idpay` · `Vandar` · `Digipay` · `Zibal` · `Hesabit` · `AsanPardakht` · `SnappPay` (color only)
+
+</details>
+
+<details>
+<summary><strong>PSPs (3)</strong></summary>
+
+`SamanKish` · `PasargadPep` · `Sadad`
+
+</details>
+
+<details>
+<summary><strong>Networks (2)</strong></summary>
+
+`Shaparak` · `BankMarkazi`
+
+</details>
+
+<details>
+<summary><strong>Merged into Sepah (5)</strong></summary>
+
+`SepahMergedAnsar` · `SepahMergedGhavamin` · `SepahMergedHekmat` · `SepahMergedKosar` · `SepahMergedMehrEghtesad`
+
 </details>
 
 ---
 
-## Advanced Usage
+## Monorepo
 
-### Dynamic Icon Loading
+This repo is a [pnpm](https://pnpm.io) monorepo:
 
-```jsx
-import * as BankIcons from '@iran-utils/iranian-banks-react-icons';
-
-function DynamicBankLogo({ bankName, useColor = true }) {
-  const iconName = useColor 
-    ? `${bankName}ColorIcon` 
-    : `${bankName}Icon`;
-  
-  const IconComponent = BankIcons[iconName];
-  
-  if (!IconComponent) {
-    return <span>Icon not found</span>;
-  }
-  
-  return <IconComponent width={48} height={48} />;
-}
-
-// Usage
-<DynamicBankLogo bankName="Melli" useColor={true} />
-<DynamicBankLogo bankName="Pasargad" useColor={false} />
+```
+packages/
+  core/    → @iran-utils/iranian-banks-icons-core
+  react/   → @iran-utils/iranian-banks-react-icons
+  vue/     → @iran-utils/iranian-banks-vue-icons
+apps/
+  docs/    → playground (deployed to GitHub Pages)
+scripts/
+  build-core.js    → SVG data → packages/core/dist/
+  build-react.js   → core data → React components
+  build-vue.js     → core data → Vue 3 components
+raw/         → source SVG files
 ```
 
-### CommonJS Import
+### Development
 
-```javascript
-const { MelliIcon, MellatColorIcon } = require('@iran-utils/iranian-banks-react-icons');
+```bash
+# Install dependencies
+pnpm install
+
+# Build everything
+pnpm build
+
+# Start docs playground
+pnpm docs:dev
 ```
 
----
-
-## Requirements
-
-- **React:** `^16.13.1 || ^17.0.1 || ^18.0.0 || ^19.2.0`
-- **React DOM:** `^16.13.1 || ^17.0.1 || ^18.0.0 || ^19.2.0`
-
-For React Native projects, ensure you have SVG support (e.g., `react-native-svg`).
-
----
-
-## Technical Details
-
-- **Format:** Optimized inline SVG components
-- **Build:** ES modules and CommonJS support
-- **Size:** Tree-shakeable - only imported icons are included in your bundle
-- **Performance:** Lightweight SVG components with no runtime overhead
+Build order: `svgo optimize → build:core → build:react → build:vue`
 
 ---
 
 ## Contributing
 
-Contributions are welcome! If you'd like to add new icons or improve existing ones:
-
-1. Fork the repository
-2. Create your feature branch
+1. Add raw SVGs to `raw/` (both `bank-name.svg` and `bank-name-color.svg`)
+2. Run `pnpm build`
 3. Submit a pull request
 
-For issues or feature requests, please use the [GitHub issue tracker](https://github.com/houtan-rocky/iranian-banks-react-icons/issues).
-
----
-
-## License
-
-MIT License - see [LICENSE](LICENSE) file for details.
+Bug reports and feature requests: [GitHub Issues](https://github.com/houtan-rocky/iranian-banks-react-icons/issues)
 
 ---
 
 ## Links
 
-- 📦 [npm Package](https://www.npmjs.com/package/@iran-utils/iranian-banks-react-icons)
-- 🔗 [GitHub Repository](https://github.com/houtan-rocky/iranian-banks-react-icons)
-- 📝 [Report an Issue](https://github.com/houtan-rocky/iranian-banks-react-icons/issues)
+- 🎮 [Live Playground](https://houtan-rocky.github.io/iranian-banks-react-icons/)
+- 📦 [npm: core](https://www.npmjs.com/package/@iran-utils/iranian-banks-icons-core)
+- 📦 [npm: react](https://www.npmjs.com/package/@iran-utils/iranian-banks-react-icons)
+- 📦 [npm: vue](https://www.npmjs.com/package/@iran-utils/iranian-banks-vue-icons)
+- 📏 [Bundle Size](https://bundlephobia.com/package/@iran-utils/iranian-banks-react-icons)
+
+---
+
+## License
+
+[MIT](LICENSE) © [Houtan Rocky](https://github.com/houtan-rocky)
