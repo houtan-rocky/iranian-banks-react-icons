@@ -1,0 +1,37 @@
+{
+  "name": "@iran-utils/iranian-banks-vue-icons",
+  "version": "1.0.0",
+  "description": "Vue 3 SVG icon library for Iranian banks and payment providers — 60+ logos with color and monochrome variants.",
+  "main": "./dist/cjs/index.js",
+  "module": "./dist/esm/index.js",
+  "types": "./dist/esm/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/esm/index.js",
+      "require": "./dist/cjs/index.js",
+      "types": "./dist/esm/index.d.ts"
+    }
+  },
+  "sideEffects": false,
+  "files": ["dist"],
+  "author": "Houtan Rocky",
+  "license": "MIT",
+  "keywords": [
+    "vue", "vue3", "icons", "svg", "svg-icons", "vue-icons",
+    "iranian", "persian", "iran", "bank", "bank-icons", "banking",
+    "fintech", "payment", "iranian-bank", "psp"
+  ],
+  "bugs": { "url": "https://github.com/houtan-rocky/iranian-banks-react-icons/issues" },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/houtan-rocky/iranian-banks-react-icons.git",
+    "directory": "packages/vue"
+  },
+  "homepage": "https://houtan-rocky.github.io/iranian-banks-react-icons/",
+  "dependencies": {
+    "@iran-utils/iranian-banks-icons-core": "workspace:*"
+  },
+  "peerDependencies": {
+    "vue": "^3.0.0"
+  }
+}

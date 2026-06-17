@@ -1,0 +1,24 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(sed 's/.js//')",
+      "Bash(npm run *)",
+      "Bash(wsl *)",
+      "PowerShell(wsl -d Ubuntu-24.04 -- /bin/bash -c \"PATH=/home/anon/.nvm/versions/node/v24.16.0/bin:`'$PATH'` && cd /home/anon/Repos/iranian-banks-react-icons && npm run build 2>&1 | tail -15\")",
+      "PowerShell(wsl -d Ubuntu-24.04 -- /bin/bash -c \"PATH=/home/anon/.nvm/versions/node/v24.16.0/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin && cd /home/anon/Repos/iranian-banks-react-icons && npm run build 2>&1\")",
+      "PowerShell(wsl -d Ubuntu-24.04 -- /bin/bash -c \"PATH=/home/anon/.nvm/versions/node/v24.16.0/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin && cd /home/anon/Repos/iranian-banks-react-icons/example/vite-project && npm install 2>&1\" | Select-Object -Last 5)",
+      "PowerShell(wsl -d Ubuntu-24.04 -- /bin/bash -c \"PATH=/home/anon/.nvm/versions/node/v24.16.0/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin && cd /home/anon/Repos/iranian-banks-react-icons/example/vite-project && npm run build 2>&1\")",
+      "Bash(ls *)",
+      "PowerShell(wsl -d Ubuntu-24.04 -- /bin/bash -c \"cd /home/anon/Repos/iranian-banks-react-icons && PATH=/home/anon/.nvm/versions/node/v24.16.0/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin git status\")",
+      "PowerShell(wsl -d Ubuntu-24.04 -- /bin/bash -c \"cd /home/anon/Repos/iranian-banks-react-icons && PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin git log --oneline -5\")",
+      "PowerShell(wsl -d Ubuntu-24.04 -- /bin/bash -c \"cd /home/anon/Repos/iranian-banks-react-icons && PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin git status\")",
+      "PowerShell(wsl -d Ubuntu-24.04 -- /bin/bash -c \"rm /home/anon/Repos/iranian-banks-react-icons/scripts/build.js && echo 'deleted'\")",
+      "PowerShell(wsl -d Ubuntu-24.04 -- /bin/bash -c \"PATH=/home/anon/.nvm/versions/node/v24.16.0/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin && cd /home/anon/Repos/iranian-banks-react-icons && node scripts/build-core.js 2>&1\")",
+      "PowerShell(wsl -d Ubuntu-24.04 -- /bin/bash -c \"PATH=/home/anon/.nvm/versions/node/v24.16.0/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin && cd /home/anon/Repos/iranian-banks-react-icons && node scripts/build-react.js 2>&1\")",
+      "PowerShell(wsl -d Ubuntu-24.04 -- /bin/bash -c \"PATH=/home/anon/.nvm/versions/node/v24.16.0/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin && cd /home/anon/Repos/iranian-banks-react-icons && node scripts/build-vue.js 2>&1\")",
+      "PowerShell(wsl -d Ubuntu-24.04 -- /bin/bash -c \"PATH=/home/anon/.nvm/versions/node/v24.16.0/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin && cd /home/anon/Repos/iranian-banks-react-icons && pnpm install 2>&1\" | Select-Object -Last 10)",
+      "PowerShell(wsl -d Ubuntu-24.04 -- cat /home/anon/Repos/iranian-banks-react-icons/pnpm-workspace.yaml)",
+      "PowerShell(wsl -d Ubuntu-24.04 -- /bin/bash -c \"PATH=/home/anon/.nvm/versions/node/v24.16.0/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin && cd /home/anon/Repos/iranian-banks-react-icons && pnpm install 2>&1\" | Select-Object -Last 8)"
+    ]
+  }
+}
