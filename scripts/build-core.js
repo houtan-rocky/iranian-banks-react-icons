@@ -67,10 +67,14 @@ async function build() {
     'utf-8'
   );
 
-  // TypeScript declarations
+  // TypeScript declarations — written to package root so they're committed and
+  // always resolvable in workspace without requiring a prior build.
   const dtsHeader = `export interface SvgIconData {\n  viewBox: string;\n  content: string;\n}\n`;
   const dtsLines = icons.map(({ name }) => `export declare const ${name}: SvgIconData;`);
   const dts = dtsHeader + dtsLines.join('\n') + '\n';
+  const pkgRoot = path.resolve(__dirname, '../packages/core');
+  await fs.writeFile(path.join(pkgRoot, 'index.d.ts'), dts, 'utf-8');
+  // Also keep copies alongside the JS for tools that resolve from dist directly.
   await fs.writeFile(path.join(OUT_DIR, 'esm/index.d.ts'), dts, 'utf-8');
   await fs.writeFile(path.join(OUT_DIR, 'cjs/index.d.ts'), dts, 'utf-8');
 

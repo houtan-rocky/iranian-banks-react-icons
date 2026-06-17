@@ -87,6 +87,8 @@ async function build() {
     `};`,
     ...names.map(name => `export declare const ${name}: DefineComponent<IconProps>;`),
   ].join('\n') + '\n';
+  const pkgRoot = path.resolve(__dirname, '../packages/vue');
+  await fs.writeFile(path.join(pkgRoot, 'index.d.ts'), dts, 'utf-8');
   await fs.writeFile(path.join(OUT_DIR, 'esm/index.d.ts'), dts, 'utf-8');
   await fs.writeFile(path.join(OUT_DIR, 'cjs/index.d.ts'), dts, 'utf-8');
 

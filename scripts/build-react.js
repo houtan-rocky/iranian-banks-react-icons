@@ -80,6 +80,8 @@ async function build() {
     `export type IconProps = Omit<React.SVGProps<SVGSVGElement>, 'children'> & React.RefAttributes<SVGSVGElement>;`,
     ...names.map(name => `export declare const ${name}: React.ForwardRefExoticComponent<IconProps>;`),
   ].join('\n') + '\n';
+  const pkgRoot = path.resolve(__dirname, '../packages/react');
+  await fs.writeFile(path.join(pkgRoot, 'index.d.ts'), dts, 'utf-8');
   await fs.writeFile(path.join(OUT_DIR, 'esm/index.d.ts'), dts, 'utf-8');
   await fs.writeFile(path.join(OUT_DIR, 'cjs/index.d.ts'), dts, 'utf-8');
 

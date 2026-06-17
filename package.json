@@ -8,6 +8,7 @@
     "build:react": "node scripts/build-react.js",
     "build:vue": "node scripts/build-vue.js",
     "build": "pnpm optimize && pnpm build:core && pnpm build:react && pnpm build:vue",
+    "prepare": "pnpm build",
     "docs:dev": "pnpm --filter docs dev",
     "docs:build": "pnpm build && pnpm --filter docs build",
     "release": "pnpm changeset publish"
